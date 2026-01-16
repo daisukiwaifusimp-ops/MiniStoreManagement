@@ -44,7 +44,7 @@ public class MainFrame extends JFrame {
         headerPanel.add(lblTitle);
         add(headerPanel, BorderLayout.NORTH);
 
-        // --- KHU VỰC TÌM KIẾM (MỚI THÊM CHO ĐỦ YÊU CẦU) ---
+        // --- KHU VỰC TÌM KIẾM ---
         JPanel searchPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         searchPanel.setBackground(new Color(245, 245, 245));
         searchPanel.setBorder(new EmptyBorder(10, 0, 0, 20));
@@ -90,7 +90,7 @@ public class MainFrame extends JFrame {
         table.getColumnModel().getColumn(4).setCellRenderer(centerRenderer); 
         table.getColumnModel().getColumn(5).setCellRenderer(centerRenderer);
 
-        // SỰ KIỆN CLICK CHUỘT VÀO BẢNG (ĐỂ SỬA)
+        // SỰ KIỆN CLICK CHUỘT VÀO BẢNG 
         table.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -135,7 +135,7 @@ public class MainFrame extends JFrame {
         inputsContainer.add(createInputPanel("Tên File Ảnh:", txtImageFile));
         inputsContainer.add(new JPanel(null) {{ setOpaque(false); }}); 
 
-        // --- KHU VỰC NÚT BẤM (ĐỦ THÊM - SỬA - XÓA) ---
+        // --- KHU VỰC NÚT BẤM ( THÊM - SỬA - XÓA) ---
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
         buttonPanel.setOpaque(false);
         buttonPanel.setBorder(new EmptyBorder(10, 0, 0, 0));
@@ -222,7 +222,7 @@ public class MainFrame extends JFrame {
         }
     }
 
-    // --- CÁC HÀM CŨ (ADD, DELETE, LOAD...) GIỮ NGUYÊN ---
+    // --- CÁC HÀM CŨ (ADD, DELETE, LOAD...) ---
     private void deleteProduct() {
         int selectedRow = table.getSelectedRow();
         if (selectedRow == -1) { JOptionPane.showMessageDialog(this, "Chọn dòng để xóa!"); return; }
@@ -313,4 +313,5 @@ public class MainFrame extends JFrame {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new MainFrame().setVisible(true));
     }
+
 }
